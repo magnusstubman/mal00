@@ -115,6 +115,9 @@ async def startWebServer(cb):
     runner = web.AppRunner(app)
 
     await runner.setup()
+    #ssl_ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    #ssl_ctx.load_cert_chain(certfile='fullchain.pem', keyfile='privkey.pem')
+    #site = web.TCPSite(runner, '0.0.0.0', 443, ssl_context=ssl_ctx)
     site = web.TCPSite(runner, '0.0.0.0', 80)
     await site.start()
     print('web server started.')
