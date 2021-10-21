@@ -2,3 +2,5 @@ prompt_toolkit
 aiohttp
 tableprint
 timeago
+pycdlib
+pyminizip

@@ -24,7 +24,6 @@ rm obfuscated.vbs
 
 echo "$part2" >> build/implant.hta
 
-./demiguise/demiguise.py -k 'jQuery2.js' -e build/implant.hta -o app.hta > /dev/null
-mv app.html build/implant.html
-cp build/implant.html ../../static/curriculum-vitae.html
-cp build/implant.hta ../../static/curriculum-vitae.hta
+#./demiguise/demiguise.py -k 'jQuery2.js' -e build/implant.hta -o app.hta > /dev/null
+#mv app.html build/implant.html
+#cp build/implant.hta ../../static/english.hta

